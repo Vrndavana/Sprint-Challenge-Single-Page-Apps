@@ -4,11 +4,11 @@ export default function SearchForm() {
  
   return (
     <section className="search-form">
-     <form>
+     {/* <form>
        <label> It's broked
          <input type="text" />
        </label>
-     </form>
+     </form> */}
     </section>
   );
 }

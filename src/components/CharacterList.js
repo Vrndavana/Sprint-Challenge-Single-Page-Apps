@@ -1,36 +1,52 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axios from 'axios';
 import CharacterCard from "./CharacterCard";
+import styled from "styled-components";
+const SearchBar = styled.div`
+text-align:center;
+`;
 
 export default function CharacterList() {
- const [ character, setCharacter] = useState ([]);
- const [ query, setQuery] = useState ("");
-
+const [data, setData] = useState([])
+const [query, setQuery] = useState("");
   useEffect(() => {
- axios.get('https://rickandmortyapi.com/api/character/')
- .then ( feedback => {
-   console.log(feedback)
-   setCharacter(feedback.data.results)
- })
-  }, []);
-
+    axios
+     .get("https://rickandmortyapi.com/api/character/")
+     .then(response => {
+      console.log(response.data.results)
+       const characters = response.data.results.filter(character =>
+        character.name.toLowerCase().includes(query.toLowerCase())
+        );
+      
+        setData(characters);
+      });
+  }, [query]);
+  const handleInputChange = event => {
+    setQuery(event.target.value);
+  };
   return (
-  <section className="characterlist">
-   
+    <SearchBar>
+    <form>
+    <input 
+    type="text"
+    onChange={handleInputChange}
+    value={query}
+    placeholder="search here"
+    />
+    </form>
     <div className="grid-view">
-    {character.map(characters => {
+    {data.map(characters => {
       return (
-        <CharacterCard
+      <CharacterCard
         id={characters.id}
         name={characters.name}
         status={characters.status}
         species={characters.species}
         image={characters.image}
         gender={characters.gender}
-        />
-      );
+      />
+      )
     })}
     </div>
-  </section>
-  );
-}
+  </SearchBar>
+  )}
