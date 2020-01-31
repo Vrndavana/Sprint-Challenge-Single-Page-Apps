@@ -1,18 +1,18 @@
 import React from "react";
 
 
-export default function CharacterCard() {
+export default function CharacterCard(props) {
   return (
     <div classNAme="character-card"> 
-    <Card>
-      <CardImg top-width="100" src= {props.image} alt="Card image"/>
-      <Cardbody>
-        <CardTitle>{props.name}</CardTitle>
-        <CardText>Status: {props.status}</CardText>
-        <CardText>Species: {props.species}</CardText>
-        <CardText>Gender: {props.gender}</CardText>
-      </Cardbody>
-    </Card>
+    <div>
+      <img top-width="100" src= {props.image} alt="Card image"/>
+      <div>
+        <p>{props.name}</p>
+        <pt>Status: {props.status}</pt>
+        <pt>Species: {props.species}</pt>
+        <pt>Gender: {props.gender}</pt>
+      </div>
+    </div>
     </div>
   
 );
