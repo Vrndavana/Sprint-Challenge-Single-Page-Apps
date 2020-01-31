@@ -27,7 +27,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: Rendering Components in the browser instead of loading from an API every time. When you click on a drop down menu or container that opens to a page youll see that is stored in URL variable 
 
 ## Project Set Up
 

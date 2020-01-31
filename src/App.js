@@ -10,7 +10,7 @@ export default function App() {
   return (
     <main>
       <Header />
-      {/* <SearchForm/> */}
+      <SearchForm/>
       <Route exact path="/"> <WelcomePage/> </Route>
       <Route path="/CharacterList"> <CharacterList/> </Route>
     </main>

@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function SearchForm() {
  
   return (
     <section className="search-form">
      {/* <form>
-       <label> It's broked
+       <label> it's broked
          <input type="text" />
        </label>
      </form> */}
